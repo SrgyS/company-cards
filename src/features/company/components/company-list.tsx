@@ -19,6 +19,7 @@ export const CompanyList = observer(() => {
             setErrorMessage,
             setOffset,
             resetCompanies,
+            setHasMore,
         },
     } = useStores();
 
@@ -33,10 +34,14 @@ export const CompanyList = observer(() => {
     };
 
     const handlePageReload = async () => {
+        console.log('Reload');
         setOffset(0);
         resetCompanies();
+        setHasMore(true);
+
         getCompaniesAction();
     };
+
     useEffect(() => {
         getCompaniesAction();
     }, []);

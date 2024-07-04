@@ -21,6 +21,9 @@ export class CompanyStore {
     setOffset = (value: number) => {
         this.offset = value;
     };
+    setHasMore = (value: boolean) => {
+        this.hasMore = value;
+    };
     resetCompanies = () => {
         this.companies = [];
     };
