@@ -1,0 +1,67 @@
+.card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    padding: 1.2rem;
+    border-radius: 20px;
+    width: clamp(300px, 100%, 340px);
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #efefef;
+    padding-bottom: 1rem;
+}
+
+.companyName {
+    font-size: 1.3rem;
+
+    margin: 0;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #efefef;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: bold;
+    color: #949494;
+}
+
+.value {
+    font-size: 1rem;
+}
+.points {
+    font-size: 1.5rem;
+
+    margin-bottom: 0.3rem;
+    padding: 1.2rem 0;
+}
+.pointsLabel {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 5px;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0 0 0.6rem;
+}

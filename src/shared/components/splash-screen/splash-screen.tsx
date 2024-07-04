@@ -1,4 +1,4 @@
-import logo from '../../assets/img/logo.png';
+import logo from '../../../assets/img/logo.png';
 import s from './splash-screen.module.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';

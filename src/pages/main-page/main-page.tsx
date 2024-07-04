@@ -1,5 +1,5 @@
-import { CompanyList } from '../../components/company/company-list';
-import { Loader } from '../../components/loader/loader';
+import { CompanyList } from '../../features/company/components/company-list';
+import { Loader } from '../../shared/components/loader/loader';
 import { Header } from './components/header';
 import s from './main-page.module.css';
 

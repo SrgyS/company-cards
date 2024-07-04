@@ -1,30 +1,67 @@
-# React + TypeScript + Vite
+# Приложение "Карточки компаний"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Этот проект представляет собой приложение для отображения карточек компаний с использованием следующих функций:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Основные функции
 
-## Expanding the ESLint configuration
+-   Экран начальной загрузки (Splash Screen):
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Показывает логотип компании на 3 секунды при первом запуске.
 
-- Configure the top-level `parserOptions` property like this:
+-   Экран списка карт компаний (Company Cards Screen):
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Отображает список карточек компаний.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Пагинация:
+Карточки компаний подгружаются порциями с сервера с помощью параметров offset (текущее количество загруженных карт) и limit (запрашиваемое количество карт).
+
+Кнопки на карточках компаний:
+
+"Подробнее": Открывает всплывающее окно с текстом "Нажата кнопка: Подробнее, id компании: companyId".\
+"Показать": Открывает всплывающее окно с текстом "Нажата кнопка: Показать, id компании: companyId".\
+"Удалить": Открывает всплывающее окно с текстом "Нажата кнопка: Удалить, id компании: companyId".\
+
+-   Динамические цвета:
+    Каждая карточка компании может иметь разные фоновые и элементарные цвета, указанные динамически.
+    Информация берется из данных полученных с сервера.
+
+-   Состояния загрузки:
+
+Начальная загрузка: Показывает экран загрузки вверху экрана.\
+Пагинационная загрузка: Показывает индикатор загрузки внизу списка карточек.\
+Обновление страницы: Показывает индикатор обновления сверху страницы.\
+
+-   Обработка ошибок:
+    Различные типы ошибок обрабатываются с помощью соответствующих всплывающих окон:
+
+401 Unauthorized: "Ошибка авторизации".\
+400 Bad Request: Показывает сообщение об ошибке, полученное от сервера.\
+500 Internal Server Error: "Все упало".\
+
+### Технологии
+
+-   **_React_**
+-   **_Typscript_**
+-   **_MobX_**
+-   **_React-router_**
+-   **_Vite_**
+
+## Демонстрация
+
+## Установка
+
+Для запуска приложения локально выполните следующие шаги:\  
+ Склонируйте репозиторий на свой локальный компьютер.\  
+ git clone https://github.com/SrgyS/company-cards.git
+
+Перейдите в каталог проекта.
+
+Установите зависимости с помощью npm или yarn.
+
+    ```npm install``` или ```yarn install```
+
+Запустите сервер разработки.
+
+    ```npm run dev```

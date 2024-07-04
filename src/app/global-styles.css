@@ -1,14 +1,14 @@
 @font-face {
-    font-family: 'SegoeUIRegular';
-    src: url('src/assets/fonts/SegoeUIRegular/SegoeUIRegular.ttf')
+    font-family: 'SegoeUI';
+    src: url('../assets/fonts/SegoeUIRegular/SegoeUIRegular.ttf')
         format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'SegoeUIBold';
-    src: url('src/assets/fonts/SegoeUIBold/SegoeUIBold.ttf') format('truetype');
+    font-family: 'SegoeUI';
+    src: url('../assets/fonts/SegoeUIBold/SegoeUIBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -51,7 +51,8 @@ body {
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font-family: 'SegoeUIRegular', sans-serif;
+    font-family: 'SegoeUI', sans-serif;
+    font-weight: 400;
 }
 input,
 button,

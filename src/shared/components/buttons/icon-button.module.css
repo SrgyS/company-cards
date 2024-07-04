@@ -1,0 +1,13 @@
+.icon {
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    background-color: var(--icon-color);
+    transition: background-color 0.3s ease;
+}
+.icon:hover {
+    background-color: color-mix(in srgb, var(--icon-color) 80%, rgb(0, 0, 0));
+}

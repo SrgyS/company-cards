@@ -1,9 +1,8 @@
 import './global-styles.css';
 
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RootStore } from '../stores/root-store';
-import { RootStoreContext } from '../stores/root-store-context';
+import { RootStore } from './root-store';
+import { RootStoreContext } from './root-store-context';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
 

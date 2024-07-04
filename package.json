@@ -13,7 +13,6 @@
     "axios": "^1.7.2",
     "mobx": "^6.12.5",
     "mobx-react-lite": "^4.0.7",
-    "mobx-utils": "^6.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-intersection-observer": "^9.10.3",

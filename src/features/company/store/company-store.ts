@@ -1,22 +1,28 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 
-import { ICompany } from '../components/company/types';
-import { getCompanies } from '../services/api';
+import { ICompany } from '../types';
+import { getCompanies } from '../../../services/api';
 
 export class CompanyStore {
     companies: ICompany[] = [];
     isLoading: boolean = false;
-    error: string | null = null;
+    errorMessage: string | null = null;
     offset = 0;
     limit = 10;
     hasMore = true;
-    isInitialLoad: boolean = true;
 
     constructor() {
         makeAutoObservable(this);
     }
-    setIsInitialLoad = (value: boolean) => {
-        this.isInitialLoad = value;
+
+    setErrorMessage = (message: string | null) => {
+        this.errorMessage = message;
+    };
+    setOffset = (value: number) => {
+        this.offset = value;
+    };
+    resetCompanies = () => {
+        this.companies = [];
     };
 
     getCompaniesAction = async () => {
@@ -24,7 +30,7 @@ export class CompanyStore {
             return;
         }
         this.isLoading = true;
-        this.error = null;
+        this.errorMessage = null;
         try {
             const response = await getCompanies(this.offset, this.limit);
             runInAction(() => {
@@ -32,11 +38,14 @@ export class CompanyStore {
                 this.offset += response.companies.length;
                 this.hasMore = response.companies.length > 0;
                 this.isLoading = false;
-                this.setIsInitialLoad(false);
             });
         } catch (error) {
             runInAction(() => {
-                this.error = 'Произошла ошибка при загрузке компаний';
+                if (error instanceof Error) {
+                    this.errorMessage = error.message;
+                } else {
+                    this.errorMessage = 'Произошла неизвестная ошибка';
+                }
                 this.isLoading = false;
             });
         }

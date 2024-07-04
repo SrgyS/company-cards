@@ -7,6 +7,13 @@
     justify-content: center;
 }
 .logo {
-    width: 20vh;
+    width: 50vw;
     height: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        width: 300px;
+        height: auto;
+    }
 }
